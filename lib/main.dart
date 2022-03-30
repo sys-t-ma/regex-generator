@@ -1,34 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:libadwaita/libadwaita.dart';
-import 'package:regex_generator/src/shared/core/app_assets.dart';
-import 'package:regex_generator/src/shared/widgets/input_text_widget.dart';
+import 'package:provider/provider.dart';
+import 'package:regex_generator/src/modules/home/home_fluent_page.dart';
+import 'package:regex_generator/src/modules/home/home_page.dart';
+import 'package:regex_generator/src/shared/core/models/app_state.store.dart';
 
 void main() {
-  runApp(const MyApp());
-}
+  const Ui = String.fromEnvironment('UI', defaultValue: 'fluent');
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  runApp(
+    ChangeNotifierProvider<AppProvider>(
+      create: (context) => AppProvider(),
+      child: HomePage(),
+      // child: Ui == 'fluent' ? const HomeFluentPage() : const HomePage(),
+    ),
+    // HomePage()
 
-  // static const Ui = String.fromEnvironment('UI', defaultValue: 'fluent');
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: AdwScaffold(
-          body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          children: const [
-            AdwAvatar(
-              child: Text('Desgraça'),
-              backgroundColor: AdwColors.cyan,
-            ),
-            InputTextGtk(labelText: 'Teste'),
-            // InputTextFluent(labelText: 'Teste Fluent')
-          ],
-        ),
-      )),
-    );
-  }
+    //   MultiProvider(
+    //   providers: [
+    //     ChangeNotifierProvider<AppProvider>(
+    //       create: (context) => AppProvider(),
+    //       child: HomePage(),
+    //       // child: Ui == 'fluent' ? const HomeFluentPage() : const HomePage(),
+    //     ),
+    //   ],
+    // )
+  );
 }
