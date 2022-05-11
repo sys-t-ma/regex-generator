@@ -1,3 +1,7 @@
+# RUN Linux
+
+`flutter run -d linux --dart-define=UI=gtk`
+
 # regex_generator
 
 ![Fluent UI](https://img.shields.io/badge/fluent-design-blue?style=flat-square&color=7A7574&labelColor=0078D7)

@@ -10,8 +10,7 @@ void main() {
   runApp(
     ChangeNotifierProvider<AppProvider>(
       create: (context) => AppProvider(),
-      child: HomePage(),
-      // child: Ui == 'fluent' ? const HomeFluentPage() : const HomePage(),
+      child: Ui == 'fluent' ? const HomeFluentPage() : const HomePage(),
     ),
     // HomePage()
 
