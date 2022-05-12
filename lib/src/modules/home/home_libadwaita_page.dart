@@ -4,14 +4,14 @@ import 'package:adwaita/adwaita.dart';
 import 'package:provider/provider.dart';
 import 'package:regex_generator/src/shared/core/models/app_state.store.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomeLibadwaitaPage extends StatefulWidget {
+  const HomeLibadwaitaPage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeLibadwaitaPage> createState() => _HomeLibadwaitaPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeLibadwaitaPageState extends State<HomeLibadwaitaPage> {
   @override
   Widget build(BuildContext context) {
     bool isDark = Provider.of<AppProvider>(context).darkTheme;
